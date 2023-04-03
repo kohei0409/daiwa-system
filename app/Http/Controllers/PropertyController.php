@@ -78,7 +78,7 @@ class PropertyController extends Controller
     }
 
 
-       /**
+    /**
      * Show the form for editing the specified resource.
      *
      * データベースを更新する
@@ -93,18 +93,16 @@ class PropertyController extends Controller
         // ブログのデータを受け取る
         $inputs = $request->all();
 
-//            dd($inputs);
-
+//        dd($inputs);
 
         \DB::beginTransaction();
         try {
 
-            $property = Property::find($inputs['id']);
 
+            $property = Property::find($inputs['id']);
 
             $property->fill([
 
-                'property_bukken_id' => $inputs['property_bukken_id'],
                 'Property_id' => $inputs['Property_id'],
                 'Property_status_ddone' => $inputs['Property_status_ddone'],
                 'Property_status' => $inputs['Property_status'],
@@ -174,9 +172,7 @@ class PropertyController extends Controller
                 'Property_cost_0004' => $inputs['Property_cost_0004'],
                 'Property_cost_0005' => $inputs['Property_cost_0005']
 
-
             ]);
-
 
             $property->save();
             \DB::commit();
@@ -185,7 +181,7 @@ class PropertyController extends Controller
             abort(500);
         }
 
-        return redirect(route('properties_return'));
+        return redirect(route('property_edit', ['id' => $inputs['id']]));
     }
 
 
