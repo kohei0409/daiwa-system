@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StorePropertyRequest;
 use App\Http\Requests\UpdatePropertyRequest;
-use Illuminate\Http\Request;
 use App\Models\Property;
+use App\Http\Requests\StoreOwnRegisterRequest;
+use App\Http\Requests\UpdateOwnRegisterRequest;
+use App\Models\OwnRegister;
 
 class PropertyController extends Controller
 {
@@ -35,7 +38,6 @@ class PropertyController extends Controller
                 $property_list = $query->where('Property_status', '工事中');
             } else {
                 $property_list = $query->where('Property_bukkenid', 'like', "$roomnumber");
-//                ddd($property_list);
             }
         }
 
@@ -56,9 +58,11 @@ class PropertyController extends Controller
     {
 
         $property = Property::find($id);
+        $owner = OwnRegister::all();
 
+        $owner_list = $owner->where('BukkenID', '=', $property->Property_bukkenid);
 
-        return view('property.detail', ['property' => $property]);
+        return view('property.detail', ['property' => $property, 'owner_list' => $owner_list]);
 
     }
 

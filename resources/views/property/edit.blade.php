@@ -3,7 +3,6 @@
 
 @section('content')
 
-    <meta http-equiv="refresh" content="10">
 
     <div class="row">
         <div class="col-10 offset-1 mb-5 bg-light">

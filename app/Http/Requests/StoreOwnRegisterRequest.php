@@ -13,7 +13,7 @@ class StoreOwnRegisterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoreOwnRegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'OwnerName' => 'required|string|max:255',
+            'Memo' => 'nullable|string',
+            'Stance' => 'required|in:0,1',
+            'RegisteredTransfer' => 'nullable|date',
+            'BukkenID' => 'required',
+            'Register' => 'required',
         ];
     }
 }

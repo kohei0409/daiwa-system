@@ -31,6 +31,9 @@ Route::get('/property/{id}', [App\Http\Controllers\PropertyController::class, 's
 Route::get('/property/edit/{id}', [App\Http\Controllers\PropertyController::class, 'showEdit'])->name('property_edit');
 Route::post('/property/update', [App\Http\Controllers\PropertyController::class, 'exeUpdate'])->name('property_update');
 
+Route::post('/property/ownerinput', [App\Http\Controllers\OwnRegisterController::class, 'create'])->name('owner_input');
+Route::post('/property/ownerupdate', [App\Http\Controllers\OwnRegisterController::class, 'update'])->name('owner_update');
+Route::delete('/property/destroy/{id}', [App\Http\Controllers\OwnRegisterController::class, 'destroy'])->name('owner_destroy');
 
 
 

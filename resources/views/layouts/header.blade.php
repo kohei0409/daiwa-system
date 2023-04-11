@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Daiwa Housing System</title>
+    <title>System</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}"/>
     <link rel="stylesheet" type="text/css"
           href="{{ asset('assets/lib/material-design-icons/css/material-design-iconic-font.min.css')}}"/>

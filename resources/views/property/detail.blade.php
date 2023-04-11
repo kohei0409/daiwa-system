@@ -3,9 +3,6 @@
 
 @section('content')
 
-    <meta http-equiv="refresh" content="15">
-
-
     <div class="container-fluid">
 
 
@@ -63,15 +60,29 @@
                     <li class="nav-item" role="presentation">
                         <button
                             class="nav-link"
-                            id="contact-tab"
+                            id="constraction-tab"
                             data-bs-toggle="tab"
-                            data-bs-target="#contact"
+                            data-bs-target="#constraction"
                             type="button"
                             role="tab"
-                            aria-controls="contact"
+                            aria-controls="constraction"
                             aria-selected="false"
                         >
-                            Contact
+                            工事情報
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button
+                            class="nav-link"
+                            id="memo-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#memo"
+                            type="button"
+                            role="tab"
+                            aria-controls="memo"
+                            aria-selected="false"
+                        >
+                            メモ
                         </button>
                     </li>
                 </ul>
@@ -523,7 +534,10 @@
                                 </div>
 
                                 <div class="col-12 p-0">
+
+
                                     <table class="table">
+
                                         <tr>
                                             <td>
                                                 所有者
@@ -541,38 +555,221 @@
 
                                         </tr>
 
-                                        <tr>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                        </tr>
+                                        @foreach($owner_list as $owner_lists)
+                                            <tr>
+                                                <td>{{$owner_lists -> OwnerName}}</td>
+                                                <td>{{$owner_lists -> RegisteredTransfer}}</td>
+                                                <td>{{$owner_lists -> created_at}}</td>
+                                                <td>4{{$owner_lists -> Register}}</td>
+                                            </tr>
 
+                                            <tr>
+                                                <td colspan="4">
+                                                    MEMO:<br>{{$owner_lists -> Memo}}
 
-                                        <tr>
-                                            <td colspan="4">
-                                                MEMO:<br>
-                                                私は今日いかにその鑑定心というんの時ができですない。もし今が留学物はまるでその演説ましないまでが上るからしまっますがは発展しないたが、たったには描いたいないでします。国家にあてるん訳は大分元来をああありたた。ざっと嘉納さんに学習弟それほど試験に合うた道具その受売私か矛盾がとしてご誘惑ましだたありて、同じ将来もそれらか利器英文にするて、大森さんのものを性質の私をいよいよご紹介としばあなた一口がお構成がなりようにさきほどお拡張がいうまいうのに、すこぶるとこう学習からかかわらですというのが外れずた。するとまたお価値をし事も全く危険と向いないで、この政府には始めたからに対する進みがなれるというた。
-                                                <div class="mt-2">
-                                                    <a class="btn btn-primary" data-bs-toggle="collapse"
-                                                       href="#collapseExample" role="button" aria-expanded="false"
-                                                       aria-controls="collapseExample">
-                                                        修正する
-                                                    </a>
+                                                    <div class="mt-2">
+                                                        <a class="btn btn-primary" data-bs-toggle="collapse"
+                                                           href="#collapseExample" role="button" aria-expanded="false"
+                                                           aria-controls="collapseExample">
+                                                            修正する
+                                                        </a>
 
-                                                </div>
-                                                <div class="collapse" id="collapseExample">
-                                                    <div class="card card-body">
-                                                        Some placeholder content for the collapse component. This panel
-                                                        is hidden by default but revealed when the user activates the
-                                                        relevant trigger.
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+
+
+                                                    <div class="collapse" id="collapseExample">
+                                                        <div class="card card-body">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-12 p-0">
+
+                                                                        <link rel="stylesheet"
+                                                                              href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                                                                        <script
+                                                                            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                                                        <script
+                                                                            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+                                                                        </head>
+
+
+                                                                        <form method="POST"
+                                                                              action="{{ route('owner_update') }} "
+                                                                              onSubmit="return checkSubmit()">
+                                                                            @csrf
+                                                                            <div class="mb-3">
+                                                                                <label for="OwnerName"
+                                                                                       class="form-label">オーナー名：</label>
+                                                                                <input type="text" name="OwnerName"
+                                                                                       id="OwnerName"
+                                                                                       value="{{ $owner_lists->OwnerName }}"
+                                                                                       class="form-control">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="Memo"
+                                                                                       class="form-label">メモ：</label>
+                                                                                <textarea name="Memo" id="Memo"
+                                                                                          class="form-control">{{ $owner_lists->Memo }}</textarea>
+                                                                            </div>
+
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label">状態：</label>
+                                                                                <div class="form-check">
+                                                                                    <input type="radio" name="Stance"
+                                                                                           id="Stance1" value="0"
+                                                                                           class="form-check-input" {{ $owner_lists->Stance == 0 ? 'checked' : '' }}>
+                                                                                    <label for="Stance1"
+                                                                                           class="form-check-label">0</label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input type="radio" name="Stance"
+                                                                                           id="Stance2" value="1"
+                                                                                           class="form-check-input" {{ $owner_lists->Stance == 1 ? 'checked' : '' }}>
+                                                                                    <label for="Stance2"
+                                                                                           class="form-check-label">1</label>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <div class="mb-3">
+                                                                                <label for="RegisteredTransfer"
+                                                                                       class="form-label">移転日：</label>
+                                                                                <input type="text"
+                                                                                       name="RegisteredTransfer"
+                                                                                       id="RegisteredTransfer"
+                                                                                       value="{{ $owner_lists->RegisteredTransfer }}"
+                                                                                       class="form-control">
+                                                                            </div>
+
+
+                                                                            <input
+                                                                                type="hidden" name="id"
+                                                                                value="{{ $property-> id }}">
+                                                                            <input
+                                                                                type="hidden" name="created_at"
+                                                                                value="{{ $owner_lists->created_at }}">
+                                                                            <input type="hidden" name="BukkenID"
+                                                                                   value="{{ $owner_lists->BukkenID }}">
+
+                                                                            <input
+                                                                                type="hidden" name="Register"
+                                                                                value="{{ $owner_lists->Register }}">
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">
+                                                                                更新する
+                                                                            </button>
+
+                                                                        </form>
+
+                                                                        <form method="POST"
+                                                                              action="{{ route('owner_destroy', $owner_lists->id) }}"
+                                                                              onSubmit="return checkDelete()">
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                            <input
+                                                                                type="hidden" name="uid"
+                                                                                value="{{ $property-> id }}">
+                                                                            <button type="submit"
+                                                                                    class="btn btn-danger">削除する
+                                                                            </button>
+                                                                        </form>
+
+                                                                        <script>
+                                                                            $(function () {
+                                                                                $('#RegisteredTransfer').datepicker({
+                                                                                    dateFormat: 'yy-mm-dd'
+                                                                                });
+                                                                            });
+
+                                                                            $(function () {
+                                                                                $('#RegisteredTransfer2').datepicker({
+                                                                                    dateFormat: 'yy-mm-dd'
+                                                                                });
+                                                                            });
+                                                                        </script>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        @endforeach
 
 
                                     </table>
+
+                                    <div class="container mt-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-8">
+                                                <div class="card">
+                                                    <div class="card-header">{{ __('新規登録') }}</div>
+
+                                                    <div class="card-body p-3">
+                                                        <form method="POST" action="{{ route('owner_input') }}">
+                                                            @csrf
+
+                                                            <div class="mb-3">
+                                                                <label for="OwnerName"
+                                                                       class="form-label">オーナー名：</label>
+                                                                <input type="text" name="OwnerName" id="OwnerName"
+                                                                       class="form-control" required>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="Memo" class="form-label">メモ：</label>
+                                                                <textarea name="Memo" id="Memo"
+                                                                          class="form-control" rows="10"></textarea>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label class="form-label">状態：</label>
+                                                                <div class="form-check">
+                                                                    <input type="radio" name="Stance" id="Stance1"
+                                                                           value="0" class="form-check-input" checked>
+                                                                    <label for="Stance1"
+                                                                           class="form-check-label">0</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input type="radio" name="Stance" id="Stance2"
+                                                                           value="1" class="form-check-input">
+                                                                    <label for="Stance2"
+                                                                           class="form-check-label">1</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="RegisteredTransfer"
+                                                                       class="form-label">移転日：</label>
+                                                                <input type="text"
+                                                                       name="RegisteredTransfer"
+                                                                       id="RegisteredTransfer2"
+                                                                       value="<?php echo date('Y-m-d') ?>"
+                                                                       class="form-control">
+
+                                                            </div>
+
+                                                            <input type="hidden" name="BukkenID"
+                                                                   value=" {{ $property->Property_bukkenid }}">
+                                                            <input type="hidden" name="Register"
+                                                                   value="0">
+                                                            <input
+                                                                type="hidden" name="id"
+                                                                value="{{ $property-> id }}">
+                                                            <button type="submit" class="btn btn-primary">登録する
+                                                            </button>
+                                                        </form>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                 </div>
 
@@ -580,17 +777,27 @@
 
 
                         </div>
-                        <div
-                            class="tab-pane fade bg-light"
-                            id="contact"
-                            role="tabpanel"
-                            aria-labelledby="contact-tab"
-                        >
-                            ...
-                        </div>
+                    </div>
+                    <div
+                        class="tab-pane fade bg-light"
+                        id="constraction"
+                        role="tabpanel"
+                        aria-labelledby="contact-tab"
+                    >
+                        ...
+                    </div>
+
+                    <div
+                        class="tab-pane fade bg-light"
+                        id="memo"
+                        role="tabpanel"
+                        aria-labelledby="memo-tab"
+                    >
+                        MEMO
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 @endsection
