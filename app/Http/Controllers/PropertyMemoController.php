@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePropertyMemoRequest;
 use App\Http\Requests\UpdatePropertyMemoRequest;
 use App\Models\PropertyMemo;
+use Illuminate\Http\Request;
+
 
 class PropertyMemoController extends Controller
 {
@@ -23,15 +25,22 @@ class PropertyMemoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $memo = new PropertyMemo();
+        $memo->BukkenID = $request->input('BukkenID');
+        $memo->Memo = $request->input('Memo');
+        $memo->Manager = $request->input('Manager');
+        $memo->Register = $request->input('Register');
+        $memo->save();
+
+return redirect()->route('property_detail', ['id' => $request->input('id'), 'tabs' => $request->input('tabs')]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePropertyMemoRequest  $request
+     * @param \App\Http\Requests\StorePropertyMemoRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StorePropertyMemoRequest $request)
@@ -42,7 +51,7 @@ class PropertyMemoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PropertyMemo  $propertyMemo
+     * @param \App\Models\PropertyMemo $propertyMemo
      * @return \Illuminate\Http\Response
      */
     public function show(PropertyMemo $propertyMemo)
@@ -53,7 +62,7 @@ class PropertyMemoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PropertyMemo  $propertyMemo
+     * @param \App\Models\PropertyMemo $propertyMemo
      * @return \Illuminate\Http\Response
      */
     public function edit(PropertyMemo $propertyMemo)
@@ -64,8 +73,8 @@ class PropertyMemoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePropertyMemoRequest  $request
-     * @param  \App\Models\PropertyMemo  $propertyMemo
+     * @param \App\Http\Requests\UpdatePropertyMemoRequest $request
+     * @param \App\Models\PropertyMemo $propertyMemo
      * @return \Illuminate\Http\Response
      */
     public function update(UpdatePropertyMemoRequest $request, PropertyMemo $propertyMemo)
@@ -76,7 +85,7 @@ class PropertyMemoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PropertyMemo  $propertyMemo
+     * @param \App\Models\PropertyMemo $propertyMemo
      * @return \Illuminate\Http\Response
      */
     public function destroy(PropertyMemo $propertyMemo)

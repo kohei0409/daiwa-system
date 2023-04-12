@@ -1,12 +1,21 @@
+
+@if (isset($_GET["tabs"]) && !empty($_GET["tabs"]))
+    @php($tabs = $_GET['tabs'])
+@else
+    @php($tabs = "1")
+@endif
+
+
 <nav class="navbar navbar-expand fixed-top be-top-header">
     <div class="container-fluid px-3">
-        <div class=""><a class="navbar-brand" href="https://daiwa-housing.jp/database/list/home">積算システム</a>
+        <div class=""><a class="navbar-brand" href="https://daiwa-housing.jp/dhs/system/home">積算システム</a>
         </div>
         <div class="page-title"><span>Dashboard</span></div>
     </div>
 </nav>
 <div class="be-left-sidebar">
-    <div class="left-sidebar-wrapper"><a class="left-sidebar-toggle" href="https://daiwa-housing.jp/database/list/home">Dashboard</a>
+    <div class="left-sidebar-wrapper"><a class="left-sidebar-toggle" href="https://daiwa-housing.jp/dhs/system/home">Dashboard</a>
+
         <div class="left-sidebar-spacer">
             <div class="left-sidebar-scroll">
                 <div class="left-sidebar-content">
@@ -14,10 +23,10 @@
                         <li class="divider">Menu</li>
 
 
-                        <li class="parent open"><a href="property?search=すべて"><i
+                        <li class="parent <?php if($tabs == '1'){echo 'open';} ?>"><a href="https://daiwa-housing.jp/dhs/system/construction?get_month=all&&select_position="><i
                                     class="icon mdi mdi-wrench"></i><span>工事詳細</span></a>
                             <ul class="sub-menu">
-                                 <li><a style="text-decoration: none;" href="{{'construction'}}/?get_month=all&&select_position="><span
+                                 <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/construction?get_month=all&&select_position="><span
                                             class="text-danger">■ </span>すべて</a></li>
                                 <li><a style="text-decoration: none;" href=""><span
                                             class="text-danger">■ </span>現場名で調べる</a></li>
@@ -33,18 +42,18 @@
                             </ul>
                         </li>
 
-                        <li class="parent"><a href="property?search=すべて"><i
+                        <li class="parent <?php if($tabs == '2'){echo 'open';} ?>"><a href="https://daiwa-housing.jp/dhs/system/property?search=すべて&&tabs=2"><i
                                     class="icon mdi mdi-home"></i><span>物件管理</span></a>
                             <ul class="sub-menu">
-                                <li><a style="text-decoration: none;" href="property?search=すべて"><span
+                                <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/property?search=すべて&&tabs=2"><span
                                             class="text-danger">■ </span>すべて</a></li>
-                                <li><a style="text-decoration: none;" href="property?search=工事中"><span
+                                <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/property?search=工事中&&tabs=2"><span
                                             class="text-warning">■ </span>工事中</a></li>
-                                <li><a style="text-decoration: none;" href="property?search=販売中"><span
+                                <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/property?search=販売中&&tabs=2"><span
                                             class="text-success">■ </span>販売中</a></li>
-                                <li><a style="text-decoration: none;" href="property?search=商談中"><span
+                                <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/property?search=商談中&&tabs=2"><span
                                             class="text-info">■ </span>商談中</a></li>
-                                <li><a style="text-decoration: none;" href="property?search=成約済"><span
+                                <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/property?search=成約済&&tabs=2"><span
                                             class="text-dark">■ </span>成約済</a></li>
                                 <li class="text-center">
                                     <form class="mb-2 mt-3" method="GET" action="property">

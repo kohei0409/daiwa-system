@@ -26,7 +26,7 @@
                         <td valign="middle" class="table-light">
                             <div class="p-2 d-grid gap-2">
                                 <a type="button"
-                                   href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n'); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                   href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n'); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                    class="btn btn-outline-success btn-sm"><?php echo date('Y / n'); ?></a>
                             </div>
                         </td>
@@ -34,7 +34,7 @@
                         <td valign="middle" class="table-light">
                             <div class="p-2 d-grid gap-2">
                                 <a type="button"
-                                   href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                   href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                    class="btn btn-outline-success btn-sm"><?php echo date('Y / n', strtotime('-1 month')); ?></a>
                             </div>
                         </td>
@@ -42,7 +42,7 @@
                         <td valign="middle" class="table-light">
                             <div class="p-2 d-grid gap-2">
                                 <a type="button"
-                                   href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                   href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                    class="btn btn-outline-success btn-sm"><?php echo date('Y / n', strtotime('-2 month')); ?></a>
                             </div>
                         </td>
@@ -73,37 +73,37 @@
                                         <div class="p-2">{{ $manufacturers->manufacturers_mail }}4</div>
                                         <div class="p-2">{{ $manufacturers->manufacturers_remarks }}5</div>
                                         <div><a class="btn btn-primary btn-sm"
-                                                href="/database/list/manufacturers/edit/{{ $manufacturers->id }}">情報更新</a></div>
+                                                href="/dhs/system/manufacturers/edit/{{ $manufacturers->id }}">情報更新</a></div>
                                     </div>
                                     <div class="col-4 p-3">
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n'); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n'); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n'); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-1 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-2 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-3 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-3 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-3 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-4 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-4 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-4 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-5 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-5 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-5 month')); ?></a>
                                         </div>
 
@@ -111,32 +111,32 @@
                                     <div class="col-4 p-3">
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-6 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-6 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-6 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-7 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-7 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-7 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-8 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-8 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-8 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-9 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-9 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-9 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-10 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-10 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-10 month')); ?></a>
                                         </div>
                                         <div class="p-2 d-grid gap-2">
                                             <a type="button"
-                                               href="/database/list/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-11 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
+                                               href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-11 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-11 month')); ?></a>
                                         </div>
 
@@ -156,7 +156,7 @@
 
             </table>
             <div class="my-3">
-                <a href="https://daiwa-housing.jp/database/list/manufacturers/create">入力する</a><br>
+                <a href="https://daiwa-housing.jp/dhs/system/manufacturers/create">入力する</a><br>
             </div>
         </div>
     </div>

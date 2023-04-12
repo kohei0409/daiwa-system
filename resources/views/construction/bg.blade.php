@@ -70,22 +70,22 @@
 
             <a class="btn btn-secondary mr-3 text-white"
 
-               href="https://daiwa-housing.jp/database/list/paper<?php echo $param;?>">印刷する</a>
+               href="https://daiwa-housing.jp/dhs/system/paper<?php echo $param;?>">印刷する</a>
 
             <a class="btn btn-outline-danger mx-1 text-red"
-               href="https://daiwa-housing.jp/database/list/construction?get_month=<?php echo $get_month; ?>&&select_position=property">現場名で並べる</a>
+               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo $get_month; ?>&&select_position=property">現場名で並べる</a>
             <a class="btn btn-outline-danger mr-3 text-red"
-               href="https://daiwa-housing.jp/database/list/construction?get_month=<?php echo $get_month; ?>&&select_position=contractor">業者名で並べる</a>
+               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo $get_month; ?>&&select_position=contractor">業者名で並べる</a>
 
 
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/database/list/construction?get_month=all&&select_position=">すべて表示</a>
+               href="https://daiwa-housing.jp/dhs/system/construction?get_month=all&&select_position=">すべて表示</a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/database/list/construction?get_month=<?php echo date('Y/n'); ?>&&select_position=">今月：<?php echo date('Y/n'); ?></a>
+               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n'); ?>&&select_position=">今月：<?php echo date('Y/n'); ?></a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/database/list/construction?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=">先月：<?php echo date('Y/n', strtotime('-1 month')); ?></a>
+               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=">先月：<?php echo date('Y/n', strtotime('-1 month')); ?></a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/database/list/construction?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=">先々月：<?php echo date('Y/n', strtotime('-2 month')); ?> </a>
+               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=">先々月：<?php echo date('Y/n', strtotime('-2 month')); ?> </a>
 
         </div>
 
@@ -230,7 +230,6 @@
                 </thead>
 
 
-                <meta http-equiv="refresh" content="10">
 
                 <?php
                 //                $constructions = $constructions->sortByDesc('id');

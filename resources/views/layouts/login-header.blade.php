@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="ja" data-theme="light">
 <head>
-    <meta http-equiv="refresh" content="10">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>Clever Dashboard | Made by Webpixels</title>

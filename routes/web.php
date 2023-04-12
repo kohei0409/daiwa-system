@@ -35,7 +35,9 @@ Route::post('/property/ownerinput', [App\Http\Controllers\OwnRegisterController:
 Route::post('/property/ownerupdate', [App\Http\Controllers\OwnRegisterController::class, 'update'])->name('owner_update');
 Route::delete('/property/destroy/{id}', [App\Http\Controllers\OwnRegisterController::class, 'destroy'])->name('owner_destroy');
 
-
+Route::post('/property/memoinput', [App\Http\Controllers\PropertyMemoController::class, 'create'])->name('memo_input');
+Route::post('/property/memoupdate', [App\Http\Controllers\PropertyMemoController::class, 'update'])->name('memo_update');
+Route::delete('/property/destroy/{id}', [App\Http\Controllers\PropertyMemoController::class, 'destroy'])->name('memo_destroy');
 
 Route::get('/constract', function () {return view('contents.constract.index');});
 

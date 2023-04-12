@@ -15,6 +15,10 @@ class CreatePropertyMemosTable extends Migration
     {
         Schema::create('property_memos', function (Blueprint $table) {
             $table->id();
+            $table->text('BukkenID');
+            $table->longText('Memo');
+            $table->text('Manager');
+            $table->text('Register');
             $table->timestamps();
         });
     }

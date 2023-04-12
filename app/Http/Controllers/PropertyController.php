@@ -9,6 +9,8 @@ use App\Models\Property;
 use App\Http\Requests\StoreOwnRegisterRequest;
 use App\Http\Requests\UpdateOwnRegisterRequest;
 use App\Models\OwnRegister;
+use App\Models\PropertyMemo;
+
 
 class PropertyController extends Controller
 {
@@ -59,10 +61,15 @@ class PropertyController extends Controller
 
         $property = Property::find($id);
         $owner = OwnRegister::all();
+        $memos = PropertyMemo::all();
+        $memos = PropertyMemo::orderBy('id', 'desc')->get();
+
 
         $owner_list = $owner->where('BukkenID', '=', $property->Property_bukkenid);
+        $memos_list = $memos->where('BukkenID', '=', $property->Property_bukkenid);
 
-        return view('property.detail', ['property' => $property, 'owner_list' => $owner_list]);
+
+        return view('property.detail', ['property' => $property, 'owner_list' => $owner_list, 'memos' => $memos_list]);
 
     }
 

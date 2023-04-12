@@ -3,6 +3,14 @@
 
 @section('content')
 
+
+@if (isset($_GET["tabs"]) && !empty($_GET["tabs"]))
+    @php($tabs = $_GET['tabs'])
+@else
+    @php($tabs = "2")
+@endif
+
+
     <div class="container-fluid">
 
 
@@ -31,7 +39,7 @@
                 <ul class="nav nav-tabs p-0" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button
-                            class="nav-link"
+                            class="nav-link <?php if($tabs == '1'){echo 'active';} ?>"
                             id="detail-tab"
                             data-bs-toggle="tab"
                             data-bs-target="#detail"
@@ -45,7 +53,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button
-                            class="nav-link active"
+                            class="nav-link <?php if($tabs == '2'){echo 'active';} ?>"
                             id="owner-tab"
                             data-bs-toggle="tab"
                             data-bs-target="#owner"
@@ -59,7 +67,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button
-                            class="nav-link"
+                            class="nav-link <?php if($tabs == '3'){echo 'active';} ?>"
                             id="constraction-tab"
                             data-bs-toggle="tab"
                             data-bs-target="#constraction"
@@ -73,7 +81,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button
-                            class="nav-link"
+                            class="nav-link <?php if($tabs == '4'){echo 'active';} ?>"
                             id="memo-tab"
                             data-bs-toggle="tab"
                             data-bs-target="#memo"
@@ -86,9 +94,9 @@
                         </button>
                     </li>
                 </ul>
-                <div class="tab-content p-0" id="myTabContent">
+                <div class="tab-content p-0 " id="myTabContent">
                     <div
-                        class="tab-pane fade bg-light "
+                        class="tab-pane fade bg-light <?php if($tabs == '1'){echo 'show active';} ?>"
                         id="detail"
                         role="tabpanel"
                         aria-labelledby="detail-tab"
@@ -522,7 +530,7 @@
 
                     </div>
                     <div
-                        class="tab-pane fade bg-light show active"
+                        class="tab-pane fade bg-light <?php if($tabs == '2'){echo 'show active';} ?>"
                         id="owner"
                         role="tabpanel"
                         aria-labelledby="owner-tab"
@@ -579,7 +587,7 @@
 
                                                     <div class="collapse" id="collapseExample">
                                                         <div class="card card-body">
-                                                            <div class="container">
+                                                            <div class="container-fluid">
                                                                 <div class="row">
                                                                     <div class="col-12 p-0">
 
@@ -726,22 +734,6 @@
                                                             </div>
 
                                                             <div class="mb-3">
-                                                                <label class="form-label">状態：</label>
-                                                                <div class="form-check">
-                                                                    <input type="radio" name="Stance" id="Stance1"
-                                                                           value="0" class="form-check-input" checked>
-                                                                    <label for="Stance1"
-                                                                           class="form-check-label">0</label>
-                                                                </div>
-                                                                <div class="form-check">
-                                                                    <input type="radio" name="Stance" id="Stance2"
-                                                                           value="1" class="form-check-input">
-                                                                    <label for="Stance2"
-                                                                           class="form-check-label">1</label>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="mb-3">
                                                                 <label for="RegisteredTransfer"
                                                                        class="form-label">移転日：</label>
                                                                 <input type="text"
@@ -756,6 +748,7 @@
                                                                    value=" {{ $property->Property_bukkenid }}">
                                                             <input type="hidden" name="Register"
                                                                    value="0">
+                                                             <input type="hidden" name="Stance" value="0" >
                                                             <input
                                                                 type="hidden" name="id"
                                                                 value="{{ $property-> id }}">
@@ -779,7 +772,7 @@
                         </div>
                     </div>
                     <div
-                        class="tab-pane fade bg-light"
+                        class="tab-pane fade bg-light <?php if($tabs == '3'){echo 'show active';} ?>"
                         id="constraction"
                         role="tabpanel"
                         aria-labelledby="contact-tab"
@@ -788,16 +781,71 @@
                     </div>
 
                     <div
-                        class="tab-pane fade bg-light"
+                        class="tab-pane fade bg-light <?php if($tabs == '4'){echo 'show active';} ?>"
                         id="memo"
                         role="tabpanel"
                         aria-labelledby="memo-tab"
                     >
-                        MEMO
+                        <div class="container-fluid">
+                            <div class="row p-5">
+                                <div class="col-12 mb-2 p-0">
+                                    <h2>MEMO</h2>
+                                </div>
+
+                                <div class="col-12 mb-5 p-0">
+                                    <form action="{{ route('memo_input') }}" method="POST">
+                                        @csrf
+
+                                        <div class="mb-3">
+                                            <textarea class="form-control" id="Memo" name="Memo" rows="5"></textarea>
+                                        </div>
+                                        <input type="hidden" class="form-control" id="BukkenID" name="BukkenID"
+                                               value="{{ $property->Property_bukkenid }}" readonly>
+
+                                        <input type="hidden" class="form-control" id="Manager" name="Manager"
+                                               value="{{ Auth::user()->name }}">
+                                        <input type="hidden" class="form-control" id="Register" name="Register"
+                                               value="0">
+                                        <input
+                                            type="hidden" name="id"
+                                            value="{{ $property-> id }}">
+                                         <input
+                                            type="hidden" name="tabs"
+                                            value="4">
+
+                                        <button type="submit" class="btn btn-primary">登録する</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="col-12 mb-5 p-0">
+
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Memo</th>
+                                        <th scope="col">Register</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($memos as $memo)
+                                        <tr>
+                                            <th scope="row">{{ $memo->id }}</th>
+                                            <td>{{ $memo->Memo }}</td>
+                                            <td>{{ $memo->Register }}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 @endsection
