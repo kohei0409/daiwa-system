@@ -124,16 +124,10 @@
 
                                 <select name="construction_name" class="form-control">
                                     @foreach($properties as $property)
-
-                                        {{--                                        @if($property->property_status == "工事中")--}}
-
-                                        <option
-                                            value="{{ $property-> Property_bukkenid }}">{{ $property-> Property_bukkenid }}</option>
-                                        {{--                                        @endif--}}
-
+                                        @if($property->Property_status == "工事中")
+                                            <option value="{{ $property-> Property_bukkenid }}">{{ $property-> Property_bukkenid }}</option>
+                                        @endif
                                     @endforeach
-
-
                                 </select>
 
 
@@ -145,7 +139,7 @@
                                 <select name="construction_contractor" class="form-control">
                                     @foreach($manufacturers as $manufacturer)
                                         <option
-                                            value="{{ $manufacturer->contractor_id }}">{{ $manufacturer->contractor_name }}</option>
+                                            value="{{ $manufacturer->manufacturers_id }}">{{ $manufacturer->manufacturers_name }}</option>
                                     @endforeach
                                     @if ($errors->has('construction_contractor'))
                                         <div class="text-danger">
@@ -194,6 +188,7 @@
                 <input type="hidden" name="construction_process_001" value="0">
                 <input type="hidden" name="construction_process_002" value="">
                 <input type="hidden" name="construction_process_003" value="">
+                <input type="hidden" name="construction_user" value="{{ Auth::check() ? Auth::user()->email : '' }}">
 
 
             </form>
@@ -225,7 +220,6 @@
                 </thead>
 
 
-
                 <?php
                 //                $constructions = $constructions->sortByDesc('id');
 
@@ -236,7 +230,6 @@
                 if ($select_position == 'contractor') {
                     $constructions = $construction->sortByDesc('construction_contractor');
                 }
-
 
 
                 ?>

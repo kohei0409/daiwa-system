@@ -76,31 +76,25 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="parent"><a href=""><i
+                        <li class="parent <?php if($tabs == '3'){echo 'open';} ?>"><a href="https://daiwa-housing.jp/dhs/system/manufacturers?tabs=3"><i
                                     class="icon mdi mdi-file"></i><span>業者管理</span></a>
                             <ul class="sub-menu">
-                                <li><a href="{{route('manufacturers')}}">業者一覧</a>
+                                <li><a href="https://daiwa-housing.jp/dhs/system/manufacturers?tabs=3">業者一覧</a>
                                 </li>
-                                <li><a href="charts-sparkline.html">Sparklines</a>
-                                </li>
-                                <li><a href="charts-chartjs.html">Chart.js</a>
-                                </li>
-                                <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                <li><a href="">業者入力</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="parent"><a href=""><i
+                        <li class="parent <?php if($tabs == '4'){echo 'open';} ?>"><a href="?tabs=4"><i
                                     class="icon mdi mdi-settings"></i><span>設定</span></a>
                             <ul class="sub-menu">
+
+                                 <li><a style="text-decoration: none;" href="https://daiwa-housing.jp/dhs/system/tool?tabs=4"><span
+                                            class="text-success">■ </span>単位設定</a></li>
+
+                                 <li><a style="text-decoration: none;" href=""><span
+                                            class="text-warning">■ </span>項目設定</a></li>
 
                                 <li><a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

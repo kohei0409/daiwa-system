@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
     <div class="row">
         <div class="col-10 offset-1 mb-5">
             <h2>業者一覧</h2>
@@ -15,6 +13,8 @@
                     <th class="table-light px-3"></th>
                     <th class="table-light px-3"></th>
                     <th></th>
+
+
                 </tr>
                 @foreach($manufacturers as $manufacturers)
                     <tr>
@@ -55,6 +55,7 @@
                             </a>
                         </td>
 
+
                     </tr>
 
                     <tr>
@@ -73,7 +74,9 @@
                                         <div class="p-2">{{ $manufacturers->manufacturers_mail }}4</div>
                                         <div class="p-2">{{ $manufacturers->manufacturers_remarks }}5</div>
                                         <div><a class="btn btn-primary btn-sm"
-                                                href="/dhs/system/manufacturers/edit/{{ $manufacturers->id }}">情報更新</a></div>
+                                                href="/dhs/system/manufacturers/edit/{{ $manufacturers->id }}">情報更新</a>
+                                        </div>
+
                                     </div>
                                     <div class="col-4 p-3">
                                         <div class="p-2 d-grid gap-2">
@@ -139,7 +142,15 @@
                                                href="/dhs/system/manufacturers/{{ $manufacturers-> id }}/?get_month=<?php echo date('Y/n', strtotime('-11 month')); ?>&&select_position=&&constractor={{ $manufacturers->id }}"
                                                class="btn btn-outline-info btn-sm"><?php echo date('Y / n', strtotime('-11 month')); ?></a>
                                         </div>
-
+                                        <div class="p-2 d-grid gap-2 text-end">
+                                            <form method="POST"
+                                                  action="{{ route('manufacturers.delete', ['id' => $manufacturers-> id]) }}"
+                                                  onSubmit="return checkDelete()">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm mt-3">削除する</button>
+                                            </form>
+                                        </div>
                                     </div>
 
 
@@ -156,7 +167,7 @@
 
             </table>
             <div class="my-3">
-                <a href="https://daiwa-housing.jp/dhs/system/manufacturers/create">入力する</a><br>
+                <a href="{{ route('manufacturers_add') }}">業者追加</a>
             </div>
         </div>
     </div>
@@ -170,7 +181,6 @@
             }
         }
     </script>
-
 
 @endsection
 

@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-8 offset-2 mb-5">
             <h2>業者登録1</h2>
-            <form method="POST" action="{{ route('contractorsstore') }}" onSubmit="return checkSubmit()">
+            <form method="POST" action="{{ route('manufacturers_store') }}" onSubmit="return checkSubmit()">
                 @csrf
 
                     <input
-                        id="contractor_id"
-                        name="contractor_id"
+                        id="manufacturers_id"
+                        name="manufacturers_id"
                         class="form-control"
                         value="{{ md5(date('y/m/d H:i:s'))}}"
                         type="hidden"
@@ -17,73 +17,73 @@
 
 
                 <div class="form-group">
-                    <label for="booklets_contractor">
+                    <label for="booklets_manufacturers">
                         業者名
                     </label>
                     <input
-                        id="contractor_name"
-                        name="contractor_name"
+                        id="manufacturers_name"
+                        name="manufacturers_name"
                         class="form-control"
-                        value="{{ old('contractor_name') }}"
+                        value="{{ old('manufacturers_name') }}"
                         type="text"
                     >
-                    @if ($errors->has('contractor_name'))
+                    @if ($errors->has('manufacturers_name'))
                         <div class="text-danger">
-                            {{ $errors->first('contractor_name') }}
+                            {{ $errors->first('manufacturers_name') }}
                         </div>
                     @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="contractor_post">
+                    <label for="manufacturers_post">
                         業者郵便番号
                     </label>
                     <input
-                        id="contractor_post"
-                        name="contractor_post"
+                        id="manufacturers_post"
+                        name="manufacturers_post"
                         class="form-control"
-                        value="{{ old('contractor_post') }}"
+                        value="{{ old('manufacturers_post') }}"
                         type="text"
                     >
-                    @if ($errors->has('contractor_post'))
+                    @if ($errors->has('manufacturers_post'))
                         <div class="text-danger">
-                            {{ $errors->first('contractor_post') }}
+                            {{ $errors->first('manufacturers_post') }}
                         </div>
                     @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="contractor_address">
+                    <label for="manufacturers_address">
                         業者住所
                     </label>
                     <input
-                        id="contractor_address"
-                        name="contractor_address"
+                        id="manufacturers_address"
+                        name="manufacturers_address"
                         class="form-control"
-                        value="{{ old('contractor_address') }}"
+                        value="{{ old('manufacturers_address') }}"
                         type="text"
                     >
-                    @if ($errors->has('contractor_address'))
+                    @if ($errors->has('manufacturers_address'))
                         <div class="text-danger">
-                            {{ $errors->first('contractor_address') }}
+                            {{ $errors->first('manufacturers_address') }}
                         </div>
                     @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="contractor_tel">
+                    <label for="manufacturers_tel">
                         業者電話番号
                     </label>
                     <input
-                        id="contractor_tel"
-                        name="contractor_tel"
+                        id="manufacturers_tel"
+                        name="manufacturers_tel"
                         class="form-control"
-                        value="{{ old('contractor_tel') }}"
+                        value="{{ old('manufacturers_tel') }}"
                         type="text"
                     >
-                    @if ($errors->has('contractor_tel'))
+                    @if ($errors->has('manufacturers_tel'))
                         <div class="text-danger">
-                            {{ $errors->first('contractor_tel') }}
+                            {{ $errors->first('manufacturers_tel') }}
                         </div>
                     @endif
                 </div>

@@ -13,16 +13,16 @@ class Manufacturers extends Model
 
     protected $fillable =
         [
-            'manufacturer_id',
-            'manufacturer_type',
-            'manufacturer_name',
-            'manufacturer_manager',
-            'manufacturer_post',
-            'manufacturer_address',
-            'manufacturer_tel',
-            'manufacturer_telsub',
-            'manufacturer_mail',
-            'manufacturer_remarks'
+            'manufacturers_id',
+            'manufacturers_type',
+            'manufacturers_name',
+            'manufacturers_manager',
+            'manufacturers_post',
+            'manufacturers_address',
+            'manufacturers_tel',
+            'manufacturers_telsub',
+            'manufacturers_mail',
+            'manufacturers_remarks'
 
         ];
 }
