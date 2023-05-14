@@ -1,6 +1,6 @@
 <tr>
     <td class="">
-        <a class="btn btn-sm btn-outline-danger" href="property/{{$property_lists -> id}}?tabs=2">
+        <a class="btn btn-sm btn-outline-danger" href="property/{{$property_lists -> id}}?tabs=2&&tab=1">
             詳細
         </a>
 

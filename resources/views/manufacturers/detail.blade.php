@@ -29,15 +29,15 @@
 
             <a class="btn btn-secondary mr-3 text-white"
 
-               href="https://daiwa-housing.jp/db/list/paper<?php echo $param;?>">印刷する</a>
+               href="https://www.daiwa-housing.jp/db/list/paper<?php echo $param;?>">印刷する</a>
 
 
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/db/list/contractors/<?php echo $_GET['constractor'];?>?get_month=<?php echo date('Y/n'); ?>&&select_position=&&constractor=<?php echo $_GET['constractor'];?>">今月：<?php echo date('Y/n'); ?></a>
+               href="https://www.daiwa-housing.jp/db/list/contractors/<?php echo $_GET['constractor'];?>?get_month=<?php echo date('Y/n'); ?>&&select_position=&&constractor=<?php echo $_GET['constractor'];?>">今月：<?php echo date('Y/n'); ?></a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/db/list/contractors/<?php echo $_GET['constractor'];?>?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=&&constractor=<?php echo $_GET['constractor'];?>">先月：<?php echo date('Y/n', strtotime('-1 month')); ?></a>
+               href="https://www.daiwa-housing.jp/db/list/contractors/<?php echo $_GET['constractor'];?>?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=&&constractor=<?php echo $_GET['constractor'];?>">先月：<?php echo date('Y/n', strtotime('-1 month')); ?></a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/db/list/contractors/<?php echo $_GET['constractor'];?>?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=&&constractor=<?php echo $_GET['constractor'];?>">先々月：<?php echo date('Y/n', strtotime('-2 month')); ?> </a>
+               href="https://www.daiwa-housing.jp/db/list/contractors/<?php echo $_GET['constractor'];?>?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=&&constractor=<?php echo $_GET['constractor'];?>">先々月：<?php echo date('Y/n', strtotime('-2 month')); ?> </a>
 
         </div>
 

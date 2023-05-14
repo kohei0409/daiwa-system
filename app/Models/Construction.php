@@ -14,10 +14,10 @@ class Construction extends Model
     protected $fillable =
         [
             'construction_select',
-            'constructions_input',
-            'constructions_id',
+            'construction_input',
+            'construction_id',
             'construction_name',
-            'construction_contractor',
+            'construction_manufacturer',
             'construction_category',
             'construction_detail',
             'construction_number',
@@ -27,7 +27,6 @@ class Construction extends Model
             'construction_process_001',
             'construction_process_002',
             'construction_process_003',
-            'construction_user'
-
+            'construction_user',
         ];
 }

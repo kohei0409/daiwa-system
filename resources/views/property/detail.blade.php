@@ -4,8 +4,8 @@
 @section('content')
 
 
-@if (isset($_GET["tabs"]) && !empty($_GET["tabs"]))
-    @php($tabs = $_GET['tabs'])
+@if (isset($_GET["tab"]) && !empty($_GET["tab"]))
+    @php($tabs = $_GET['tab'])
 @else
     @php($tabs = "2")
 @endif
@@ -106,7 +106,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12 mb-5 p-5">
-                                    <h2>物件更新</h2>
+                                    <h2>{{ $property->Property_bukkenid }}( {{ $property->Property_bukkenName }})</h2>
 
                                     {{--ROW1--}}
                                     <div class="row mt-3">
@@ -517,7 +517,7 @@
 
                                     <div class="mt-5">
 
-                                        <a class="btn btn-primary mt-3" href="edit/{{ $property-> id }}">更新</a>
+                                        <a class="btn btn-primary mt-3" href="edit/{{ $property-> id }}&&tabs=2">更新</a>
                                     </div>
 
                                 </div>

@@ -48,8 +48,14 @@ class ConstructionController extends Controller
             abort(500);
 
         }
+        $constructions = Construction::all();
+        $properties = Property::all();
+        $manufacturers = Manufacturers::all();
+        $details = Construction::all();
+        $tools = Tool::all();
 
-        return redirect('https://daiwa-housing.jp/dhs/system/construction?get_month=all&&select_position=');
+
+        return view('construction.list', ['constructions' => $constructions, 'properties' => $properties, 'manufacturers' => $manufacturers, 'tools' => $tools, 'details' => $details]);
     }
 
 
@@ -134,11 +140,11 @@ class ConstructionController extends Controller
             $blog = Construction::find($inputs['id']);
             $blog->fill([
                 'construction_select' => $inputs['construction_select'],
-                'constructions_input' => $inputs['constructions_input'],
-                'constructions_id' => $inputs['constructions_id'],
+                'construction_input' => $inputs['construction_input'],
+                'construction_id' => $inputs['construction_id'],
                 'construction_name' => $inputs['construction_name'],
-                'constructions_category' => $inputs['constructions_category'],
-                'constructions_manufacturer' => $inputs['constructions_manufacturer'],
+                'construction_manufacturer' => $inputs['construction_manufacturer'],
+                'construction_category' => $inputs['construction_category'],
                 'construction_detail' => $inputs['construction_detail'],
                 'construction_number' => $inputs['construction_number'],
                 'construction_unit' => $inputs['construction_unit'],
@@ -147,7 +153,6 @@ class ConstructionController extends Controller
                 'construction_process_001' => $inputs['construction_process_001'],
                 'construction_process_002' => $inputs['construction_process_002'],
                 'construction_process_003' => $inputs['construction_process_003']
-
             ]);
             $blog->save();
             \DB::commit();

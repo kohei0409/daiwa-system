@@ -50,6 +50,20 @@ class PropertyController extends Controller
 
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * 物件を編集する
+     *
+     */
+    public function input()
+    {
+
+        return view('property.input');
+
+    }
+
+
+    /**
      * Display the specified resource.
      *
      * 物件の詳細を表示する

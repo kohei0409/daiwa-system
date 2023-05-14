@@ -68,19 +68,19 @@
             ?>
 
             <a class="btn btn-secondary mr-3 text-white"
-               href="https://daiwa-housing.jp/dhs/system/paper<?php echo $param;?>">印刷する</a>
+               href="https://www.daiwa-housing.jp/dhs/system/paper<?php echo $param;?>">印刷する</a>
             <a class="btn btn-outline-danger mx-1 text-red"
-               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo $get_month; ?>&&select_position=property">現場名で並べる</a>
+               href="https://www.daiwa-housing.jp/dhs/system/construction?get_month=<?php echo $get_month; ?>&&select_position=property">現場名で並べる</a>
             <a class="btn btn-outline-danger mr-3 text-red"
-               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo $get_month; ?>&&select_position=contractor">業者名で並べる</a>
+               href="https://www.daiwa-housing.jp/dhs/system/construction?get_month=<?php echo $get_month; ?>&&select_position=contractor">業者名で並べる</a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/dhs/system/construction?get_month=all&&select_position=">すべて表示</a>
+               href="https://www.daiwa-housing.jp/dhs/system/construction?get_month=all&&select_position=">すべて表示</a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n'); ?>&&select_position=">今月：<?php echo date('Y/n'); ?></a>
+               href="https://www.daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n'); ?>&&select_position=">今月：<?php echo date('Y/n'); ?></a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=">先月：<?php echo date('Y/n', strtotime('-1 month')); ?></a>
+               href="https://www.daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n', strtotime('-1 month')); ?>&&select_position=">先月：<?php echo date('Y/n', strtotime('-1 month')); ?></a>
             <a class="btn btn-success mx-1 text-white"
-               href="https://daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=">先々月：<?php echo date('Y/n', strtotime('-2 month')); ?> </a>
+               href="https://www.daiwa-housing.jp/dhs/system/construction?get_month=<?php echo date('Y/n', strtotime('-2 month')); ?>&&select_position=">先々月：<?php echo date('Y/n', strtotime('-2 month')); ?> </a>
 
         </div>
 
@@ -125,7 +125,8 @@
                                 <select name="construction_name" class="form-control">
                                     @foreach($properties as $property)
                                         @if($property->Property_status == "工事中")
-                                            <option value="{{ $property-> Property_bukkenid }}">{{ $property-> Property_bukkenid }}</option>
+                                            <option
+                                                value="{{ $property-> Property_bukkenid }}">{{ $property-> Property_bukkenid }}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -158,7 +159,7 @@
                                     name="construction_category"
                                     class="form-control"
                                     value="{{ old('construction_category') }}"
-                                    type="text"
+                                    type="text" required
                                 >
                                 @if ($errors->has('construction_category'))
                                     <div class="text-danger">
@@ -240,7 +241,18 @@
                         <tr>
                             <td>{{ $construction->construction_select }}</td>
                             <td>{{ $construction->construction_name }}</td>
-                            <td>{{ $construction->construction_contractor}}</td>
+                            <td>
+                                @foreach($manufacturers as $manufacturer)
+
+                                    @if($construction->construction_contractor == $manufacturer->manufacturers_id)
+
+                                        {{$manufacturer->manufacturers_name}}
+
+                                    @endif
+
+                                @endforeach
+
+                            </td>
                             <td>{{ $construction->construction_category }}</td>
                             <td>{{ $construction->construction_detail }}</td>
                             <td>{{ $construction->construction_number }}{{ $construction->construction_unit }}</td>
@@ -248,11 +260,10 @@
 
 
                             <td style="text-align: center;">
-                                <a data-bs-toggle="collapse" href="#tag_{{ $construction->construction_id }}"
-                                   role="button"
-                                   aria-expanded="false" aria-controls="tag_{{ $construction->construction_id }}">
+                                <a>
                                     <i class="fas fa-plus"></i>
                                 </a>
+
 
                             </td>
                             <td style="text-align: center;">
@@ -270,50 +281,6 @@
                             </td>
                         </tr>
 
-                            <?php $construction_id = $construction->construction_id; ?>
-
-                        @foreach($constructions as $construction)
-                            @if($construction->construction_detail)
-                                @if($construction->construction_input == $construction_id)
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>{{ $construction->construction_category }}</td>
-                                        <td>{{ $construction->construction_detail }}</td>
-                                        <td>{{ $construction->construction_number }}{{ $construction->construction_unit }}</td>
-                                        <td>{{ $construction->construction_price }}</td>
-
-
-                                        <td style="text-align: center;">
-                                            <a data-bs-toggle="collapse"
-                                               href="#tag_{{ $construction->construction_id }}"
-                                               role="button"
-                                               aria-expanded="false"
-                                               aria-controls="tag_{{ $construction->construction_id }}">
-                                                <i class="fas fa-plus"></i>
-                                            </a>
-
-                                        </td>
-                                        <td style="text-align: center;">
-                                            <form method="POST"
-                                                  action="{{ route('constructiondelete', $construction->id) }}"
-                                                  onSubmit="return checkDelete()">
-                                                @csrf
-
-                                                <button type="submit" onclick
-                                                        style="border: 0px;background-color: transparent;cursor: pointer;">
-                                                    <i
-                                                        class="far fa-trash-alt"></i></button>
-                                            </form>
-                                        </td>
-                                        <td style="text-align: center;width: 30px">
-
-                                        </td>
-                                    </tr>
-                                @endif
-                            @endif
-                        @endforeach
 
                     @endif
 
