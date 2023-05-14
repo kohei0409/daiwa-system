@@ -25,11 +25,39 @@ Auth::routes([
 Route::group(['middleware' => 'auth'], function () {
 
 
-    Route::get('/assessment', [App\Http\Controllers\HomeController::class, 'assessment'])->name('assessment');
-    Route::get('/construction', [App\Http\Controllers\HomeController::class, 'construction'])->name('construction');
-    Route::get('/sales', [App\Http\Controllers\HomeController::class, 'sales'])->name('sales');
-    Route::get('/accounting', [App\Http\Controllers\HomeController::class, 'accounting'])->name('accounting');
+    Route::get('/assessment', [App\Http\Controllers\DpAssessmentController::class, 'index'])->name('assessment');
+    Route::get('/assessment/list', [App\Http\Controllers\DpAssessmentController::class, 'list'])->name('assessment_list');
+    Route::get('/assessment/input', [App\Http\Controllers\DpAssessmentController::class, 'input'])->name('assessment_input');
+    Route::get('/assessment/store', [App\Http\Controllers\DpAssessmentController::class, 'store'])->name('assessment_store');
+    Route::get('/assessment/edit', [App\Http\Controllers\DpAssessmentController::class, 'edit'])->name('assessment_edit');
+    Route::get('/assessment/update', [App\Http\Controllers\DpAssessmentController::class, 'update'])->name('assessment_update');
+    Route::get('/assessment/destroy', [App\Http\Controllers\DpAssessmentController::class, 'destroy'])->name('assessment_destroy');
 
+
+    Route::get('/construction', [App\Http\Controllers\DpConstructionController::class, 'index'])->name('construction');
+    Route::get('/construction/list', [App\Http\Controllers\DpConstructionController::class, 'list'])->name('construction_list');
+    Route::get('/construction/input', [App\Http\Controllers\DpConstructionController::class, 'input'])->name('construction_input');
+    Route::get('/construction/store', [App\Http\Controllers\DpConstructionController::class, 'store'])->name('construction_store');
+    Route::get('/construction/edit', [App\Http\Controllers\DpConstructionController::class, 'edit'])->name('construction_edit');
+    Route::get('/construction/update', [App\Http\Controllers\DpConstructionController::class, 'update'])->name('construction_update');
+    Route::get('/construction/destroy', [App\Http\Controllers\DpConstructionController::class, 'destroy'])->name('construction_destroy');
+
+    Route::get('/sales', [App\Http\Controllers\DpSalesController::class, 'index'])->name('sales');
+    Route::get('/sales/list', [App\Http\Controllers\DpSalesController::class, 'list'])->name('sales_list');
+    Route::get('/sales/input', [App\Http\Controllers\DpSalesController::class, 'input'])->name('sales_input');
+    Route::get('/sales/store', [App\Http\Controllers\DpSalesController::class, 'store'])->name('sales_store');
+    Route::get('/sales/edit', [App\Http\Controllers\DpSalesController::class, 'edit'])->name('sales_edit');
+    Route::get('/sales/update', [App\Http\Controllers\DpSalesController::class, 'update'])->name('sales_update');
+    Route::get('/sales/destroy', [App\Http\Controllers\DpSalesController::class, 'destroy'])->name('sales_destroy');
+
+
+    Route::get('/accounting', [App\Http\Controllers\DpAccountingController::class, 'index'])->name('accounting');
+    Route::get('/accounting/list', [App\Http\Controllers\DpAccountingController::class, 'list'])->name('accounting_list');
+    Route::get('/accounting/input', [App\Http\Controllers\DpAccountingController::class, 'input'])->name('accounting_input');
+    Route::get('/accounting/store', [App\Http\Controllers\DpAccountingController::class, 'store'])->name('accounting_store');
+    Route::get('/accounting/edit', [App\Http\Controllers\DpAccountingController::class, 'edit'])->name('accounting_edit');
+    Route::get('/accounting/update', [App\Http\Controllers\DpAccountingController::class, 'update'])->name('accounting_update');
+    Route::get('/accounting/destroy', [App\Http\Controllers\DpAccountingController::class, 'destroy'])->name('accounting_destroy');
 
 
 
@@ -84,7 +112,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/construction/update', [\App\Http\Controllers\ConstructionController::class, 'exeUpdate'])->name('constructionupdate');
     Route::post('/construction/update_detail', [\App\Http\Controllers\ConstructionController::class, 'exeUpdate_detail'])->name('constructionupdate_detail');
     Route::delete('/construction/delete/{id}', [\App\Http\Controllers\ConstructionController::class, 'exeDelete'])->name('constructiondelete');
-
 
 
     Route::get('/tool', [\App\Http\Controllers\ToolController::class, 'showlist'])->name('tools');

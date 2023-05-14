@@ -15,72 +15,72 @@ class DpSalesController extends Controller
      */
     public function index()
     {
-        //
+               return view('dp_sales.index');
+
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function list()
     {
-        //
+        return view('dp_sales.list');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function input()
+    {
+        return view('dp_sales.input');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        return view('dp_sales.store');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\StoreDp_salesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDp_salesRequest $request)
+    public function edit()
     {
-        //
+        return view('dp_sales.edit');
     }
 
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  \App\Models\Dp_sales  $dp_sales
      * @return \Illuminate\Http\Response
      */
-    public function show(Dp_sales $dp_sales)
+    public function update()
     {
-        //
+        return view('dp_sales.update');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dp_sales  $dp_sales
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dp_sales $dp_sales)
-    {
-        //
-    }
 
     /**
-     * Update the specified resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\UpdateDp_salesRequest  $request
-     * @param  \App\Models\Dp_sales  $dp_sales
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDp_salesRequest $request, Dp_sales $dp_sales)
+    public function destroy()
     {
-        //
+        return view('dp_sales.destroy');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Dp_sales  $dp_sales
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Dp_sales $dp_sales)
-    {
-        //
-    }
+
 }

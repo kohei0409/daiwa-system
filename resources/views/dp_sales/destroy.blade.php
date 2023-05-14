@@ -4,7 +4,8 @@
     <main class="py-6 bg-surface-secondary">
         <div class="container-fluid">
 
-            Assessment.index
+
+            Sales.destroy
 
 
 

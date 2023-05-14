@@ -15,72 +15,71 @@ class DpAssessmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('dp_assessment.index');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function list()
     {
-        //
+        return view('dp_assessment.list');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function input()
+    {
+        return view('dp_assessment.input');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        return view('dp_assessment.store');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\StoreDp_assessmentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDp_assessmentRequest $request)
+    public function edit()
     {
-        //
+        return view('dp_assessment.edit');
     }
 
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  \App\Models\Dp_assessment  $dp_assessment
      * @return \Illuminate\Http\Response
      */
-    public function show(Dp_assessment $dp_assessment)
+    public function update()
     {
-        //
+        return view('dp_assessment.update');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dp_assessment  $dp_assessment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dp_assessment $dp_assessment)
-    {
-        //
-    }
 
     /**
-     * Update the specified resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\UpdateDp_assessmentRequest  $request
-     * @param  \App\Models\Dp_assessment  $dp_assessment
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDp_assessmentRequest $request, Dp_assessment $dp_assessment)
+    public function destroy()
     {
-        //
+        return view('dp_assessment.destroy');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Dp_assessment  $dp_assessment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Dp_assessment $dp_assessment)
-    {
-        //
-    }
+
 }

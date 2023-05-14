@@ -4,7 +4,9 @@
     <main class="py-6 bg-surface-secondary">
         <div class="container-fluid">
 
-            Sales
+            Sales.index
+
+
 
         </div>
     </main>

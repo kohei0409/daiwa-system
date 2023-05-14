@@ -15,72 +15,72 @@ class DpAccountingController extends Controller
      */
     public function index()
     {
-        //
+        return view('dp_accounting.index');
+
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function list()
     {
-        //
+        return view('dp_accounting.list');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function input()
+    {
+        return view('dp_accounting.input');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        return view('dp_accounting.store');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\StoreDp_accountingRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDp_accountingRequest $request)
+    public function edit()
     {
-        //
+        return view('dp_accounting.edit');
     }
 
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  \App\Models\Dp_accounting  $dp_accounting
      * @return \Illuminate\Http\Response
      */
-    public function show(Dp_accounting $dp_accounting)
+    public function update()
     {
-        //
+        return view('dp_accounting.update');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dp_accounting  $dp_accounting
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dp_accounting $dp_accounting)
-    {
-        //
-    }
 
     /**
-     * Update the specified resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\UpdateDp_accountingRequest  $request
-     * @param  \App\Models\Dp_accounting  $dp_accounting
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDp_accountingRequest $request, Dp_accounting $dp_accounting)
+    public function destroy()
     {
-        //
+        return view('dp_accounting.destroy');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Dp_accounting  $dp_accounting
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Dp_accounting $dp_accounting)
-    {
-        //
-    }
+
 }

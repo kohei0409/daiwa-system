@@ -15,72 +15,71 @@ class DpConstructionController extends Controller
      */
     public function index()
     {
-        //
+               return view('dp_construction.index');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function list()
     {
-        //
+        return view('dp_construction.list');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function input()
+    {
+        return view('dp_construction.input');
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+        return view('dp_construction.store');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\StoreDp_constructionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDp_constructionRequest $request)
+    public function edit()
     {
-        //
+        return view('dp_construction.edit');
     }
 
     /**
-     * Display the specified resource.
+     * Display a listing of the resource.
      *
-     * @param  \App\Models\Dp_construction  $dp_construction
      * @return \Illuminate\Http\Response
      */
-    public function show(Dp_construction $dp_construction)
+    public function update()
     {
-        //
+        return view('dp_construction.update');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Dp_construction  $dp_construction
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Dp_construction $dp_construction)
-    {
-        //
-    }
 
     /**
-     * Update the specified resource in storage.
+     * Display a listing of the resource.
      *
-     * @param  \App\Http\Requests\UpdateDp_constructionRequest  $request
-     * @param  \App\Models\Dp_construction  $dp_construction
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDp_constructionRequest $request, Dp_construction $dp_construction)
+    public function destroy()
     {
-        //
+        return view('dp_construction.destroy');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Dp_construction  $dp_construction
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Dp_construction $dp_construction)
-    {
-        //
-    }
+
 }
