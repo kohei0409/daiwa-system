@@ -23,6 +23,17 @@ Auth::routes([
 ]);
 
 Route::group(['middleware' => 'auth'], function () {
+
+
+    Route::get('/assessment', [App\Http\Controllers\HomeController::class, 'assessment'])->name('assessment');
+    Route::get('/construction', [App\Http\Controllers\HomeController::class, 'construction'])->name('construction');
+    Route::get('/sales', [App\Http\Controllers\HomeController::class, 'sales'])->name('sales');
+    Route::get('/accounting', [App\Http\Controllers\HomeController::class, 'accounting'])->name('accounting');
+
+
+
+
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
@@ -39,14 +50,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/property/input', [App\Http\Controllers\PropertyController::class, 'input'])->name('property_input');
 
 
-
-
-
     Route::post('/property/ownerinput', [App\Http\Controllers\OwnRegisterController::class, 'create'])->name('owner_input');
     Route::post('/property/ownerupdate', [App\Http\Controllers\OwnRegisterController::class, 'update'])->name('owner_update');
     Route::delete('/property/destroy/{id}', [App\Http\Controllers\OwnRegisterController::class, 'destroy'])->name('owner_destroy');
-
-
 
 
     Route::get('/constract', function () {
@@ -78,6 +84,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/construction/update', [\App\Http\Controllers\ConstructionController::class, 'exeUpdate'])->name('constructionupdate');
     Route::post('/construction/update_detail', [\App\Http\Controllers\ConstructionController::class, 'exeUpdate_detail'])->name('constructionupdate_detail');
     Route::delete('/construction/delete/{id}', [\App\Http\Controllers\ConstructionController::class, 'exeDelete'])->name('constructiondelete');
+
+
 
     Route::get('/tool', [\App\Http\Controllers\ToolController::class, 'showlist'])->name('tools');
     Route::get('/tool/create', [\App\Http\Controllers\ToolController::class, 'showCreate'])->name('toolscreate');

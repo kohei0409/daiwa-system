@@ -27,6 +27,10 @@
                                 href=""><i
                                     class="icon mdi mdi-wrench"></i><span>査定部</span></a>
                             <ul class="sub-menu">
+
+                                 <li><a style="text-decoration: none;"
+                                       href="https://www.daiwa-housing.jp/dhs/system/property/input"><span
+                                            class="text-danger">■ </span>査定先リスト</a></li>
                                 <li><a style="text-decoration: none;"
                                        href="https://www.daiwa-housing.jp/dhs/system/property/input"><span
                                             class="text-danger">■ </span>物件入力</a></li>
