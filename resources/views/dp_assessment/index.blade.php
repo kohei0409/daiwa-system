@@ -6,6 +6,13 @@
 
             Assessment.index
 
+            <ul>
+                <li><a href="{{'dp_assessment'}}">INDEX</a></li>
+                <li><a href="{{'dp_assessment_list'}}">LIST</a></li>
+                <li><a href="{{'dp_assessment_input'}}">INPUT</a></li>
+                <li><a href="{{'dp_assessment_edit'}}">UPDATE</a></li>
+                <li><a href="{{'dp_assessment_destroy'}}">DELETE</a></li>
+            </ul>
 
 
         </div>

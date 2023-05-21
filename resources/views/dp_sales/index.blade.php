@@ -6,7 +6,13 @@
 
             Sales.index
 
-
+            <ul>
+                <li><a href="{{'dp_sales'}}">INDEX</a></li>
+                <li><a href="{{'dp_sales_list'}}">LIST</a></li>
+                <li><a href="{{'dp_sales_input'}}">INPUT</a></li>
+                <li><a href="{{'dp_sales_edit'}}">UPDATE</a></li>
+                <li><a href="{{'dp_sales_destroy'}}">DELETE</a></li>
+            </ul>
 
         </div>
     </main>

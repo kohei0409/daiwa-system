@@ -1,34 +1,49 @@
+
+    </div>
+    <!--end::Wrapper-->
+
+
 </div>
+<!--end::Page-->
+</div>
+<!--end::App-->
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
 
-    <script src="{{ asset('assets/lib/perfect-scrollbar/js/perfect-scrollbar.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/js/app.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/jquery.flot.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/jquery.flot.pie.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/jquery.flot.time.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/jquery.flot.resize.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/plugins/jquery.flot.orderBars.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/plugins/curvedLines.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-flot/plugins/jquery.flot.tooltip.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery.sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/countup/countUp.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jquery-ui/jquery-ui.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jqvmap/jquery.vmap.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('assets/lib/jqvmap/maps/jquery.vmap.world.js')}}" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-      	//-initialize the javascript
-      	App.init();
-      	App.dashboard();
 
-      });
-    </script>
+
+
+<!--begin::Javascript-->
+<script>
+    var hostUrl = "/good/assets/";        </script>
+
+<!--begin::Global Javascript Bundle(used by all pages)-->
+<script src="assets/plugins/global/plugins.bundle.js"></script>
+<script src="assets/js/scripts.bundle.js"></script>
+<!--end::Global Javascript Bundle-->
+
+<!--begin::Vendors Javascript(used by this page)-->
+<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
+<!--end::Vendors Javascript-->
+
+<!--begin::Custom Javascript(used by this page)-->
+<script src="assets/js/widgets.bundle.js"></script>
+<script src="assets/js/custom/widgets.js"></script>
+<script src="assets/js/custom/apps/chat/chat.js"></script>
+<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/type.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/budget.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/settings.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/team.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/targets.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/files.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/complete.js"></script>
+<script src="assets/js/custom/utilities/modals/create-project/main.js"></script>
+<script src="assets/js/custom/utilities/modals/create-app.js"></script>
+<script src="assets/js/custom/utilities/modals/create-campaign.js"></script>
+<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+<!--end::Custom Javascript-->
+<!--end::Javascript-->
 </body>
+<!--end::Body-->
 </html>

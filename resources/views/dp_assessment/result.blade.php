@@ -1,6 +1,6 @@
 <tr>
     <td class="">
-        <a class="btn btn-sm btn-outline-danger" href="property/{{$property_lists -> id}}?tabs=1&&tab=1">
+        <a class="btn btn-sm btn-outline-danger" href="property/{{$property_lists -> id}}?tabs=<?php if($pop == ''){echo '1';}else{echo $pop;}?>&&tab=1">
             詳細
         </a>
 

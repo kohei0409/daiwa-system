@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDp_assessmentRequest;
 use App\Http\Requests\UpdateDp_assessmentRequest;
 use App\Models\Dp_assessment;
+use App\Models\Property;
 
 class DpAssessmentController extends Controller
 {
@@ -25,7 +26,11 @@ class DpAssessmentController extends Controller
      */
     public function list()
     {
-        return view('dp_assessment.list');
+
+        $query = Property::all();
+        $property_list = $query->where('Property_status', '査定中');
+
+        return view('dp_assessment.list', ['property_list' => $property_list]);
     }
 
 

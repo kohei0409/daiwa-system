@@ -1,15 +1,9 @@
 @include('layouts.header')
 
-    @include('layouts.sidebar')
+@include('layouts.sidebar')
 
 
-
-
-      <div class="be-content p-3" style="margin-top: 20px;">
-
-          @yield('content')
-
-      </div>
+@yield('content')
 
 
 @include('layouts.footer')
