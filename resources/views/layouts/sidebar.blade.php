@@ -72,12 +72,12 @@
                    <span class="menu-title">査定部</span><span class="menu-arrow"></span></span>
                 <div class="menu-sub menu-sub-accordion">
 
-                    <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '11'){ echo 'active';} ?>"
-                           href="{{asset('dp_assessment')}}?tabs=1&&cals=11">
-                            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
-                                class="menu-title">INDEX</span></a>
-                    </div>
+                    {{--                    <div class="menu-item">--}}
+                    {{--                        <a class="menu-link <?php if($cals == '11'){ echo 'active';} ?>"--}}
+                    {{--                           href="{{asset('dp_assessment')}}?tabs=1&&cals=11">--}}
+                    {{--                            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span--}}
+                    {{--                                class="menu-title">INDEX</span></a>--}}
+                    {{--                    </div>--}}
                     <div class="menu-item">
                         <a class="menu-link <?php if($cals == '12'){ echo 'active';} ?>"
                            href="{{asset('dp_assessment_list')}}?tabs=1&&cals=12">
@@ -86,26 +86,26 @@
                                 class="menu-title">LIST</span></a>
                     </div>
 
-                    <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '13'){ echo 'active';} ?>" href="{{asset('dp_assessment_input')}}?tabs=1&&cals=13">
-                            <span
-                                class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
-                                class="menu-title">INPUT</span></a>
-                    </div>
+                    {{--                    <div class="menu-item">--}}
+                    {{--                        <a class="menu-link <?php if($cals == '13'){ echo 'active';} ?>" href="{{asset('dp_assessment_input')}}?tabs=1&&cals=13">--}}
+                    {{--                            <span--}}
+                    {{--                                class="menu-bullet"><span class="bullet bullet-dot"></span></span><span--}}
+                    {{--                                class="menu-title">INPUT</span></a>--}}
+                    {{--                    </div>--}}
 
-                    <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '14'){ echo 'active';} ?>" href="{{asset('dp_assessment_edit')}}?tabs=1&&cals=14">
-                            <span
-                                class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
-                                class="menu-title">UPDATE</span></a>
-                    </div>
+                    {{--                    <div class="menu-item">--}}
+                    {{--                        <a class="menu-link <?php if($cals == '14'){ echo 'active';} ?>" href="{{asset('dp_assessment_edit')}}?tabs=1&&cals=14">--}}
+                    {{--                            <span--}}
+                    {{--                                class="menu-bullet"><span class="bullet bullet-dot"></span></span><span--}}
+                    {{--                                class="menu-title">UPDATE</span></a>--}}
+                    {{--                    </div>--}}
 
-                    <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '15'){ echo 'active';} ?>" href="{{asset('dp_assessment_destroy')}}?tabs=1&&cals=15">
-                            <span
-                                class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
-                                class="menu-title">DELETE</span></a>
-                    </div>
+                    {{--                    <div class="menu-item">--}}
+                    {{--                        <a class="menu-link <?php if($cals == '15'){ echo 'active';} ?>" href="{{asset('dp_assessment_destroy')}}?tabs=1&&cals=15">--}}
+                    {{--                            <span--}}
+                    {{--                                class="menu-bullet"><span class="bullet bullet-dot"></span></span><span--}}
+                    {{--                                class="menu-title">DELETE</span></a>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
 
@@ -131,28 +131,32 @@
                                 class="menu-title">INDEX</span></a>
                     </div>
                     <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '22'){ echo 'active';} ?>" href="{{asset('dp_construction_list')}}?tabs=2&&cals=22">
+                        <a class="menu-link <?php if($cals == '22'){ echo 'active';} ?>"
+                           href="{{asset('dp_construction_list')}}?tabs=2&&cals=22">
                             <span
                                 class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
                                 class="menu-title">LIST</span></a>
                     </div>
 
                     <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '23'){ echo 'active';} ?>" href="{{asset('dp_construction_input')}}?tabs=2&&cals=23">
+                        <a class="menu-link <?php if($cals == '23'){ echo 'active';} ?>"
+                           href="{{asset('dp_construction_estimate')}}?tabs=2&&cals=23">
                             <span
                                 class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
                                 class="menu-title">INPUT</span></a>
                     </div>
 
                     <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '24'){ echo 'active';} ?>" href="{{asset('dp_construction_edit')}}?tabs=2&&cals=24">
+                        <a class="menu-link <?php if($cals == '24'){ echo 'active';} ?>"
+                           href="{{asset('dp_construction_update')}}?tabs=2&&cals=24">
                             <span
                                 class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
                                 class="menu-title">UPDATE</span></a>
                     </div>
 
                     <div class="menu-item">
-                        <a class="menu-link <?php if($cals == '25'){ echo 'active';} ?>" href="{{asset('dp_construction_destroy')}}?tabs=2&&cals=25">
+                        <a class="menu-link <?php if($cals == '25'){ echo 'active';} ?>"
+                           href="{{asset('dp_construction_destroy')}}?tabs=2&&cals=25">
                             <span
                                 class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
                                 class="menu-title">DELETE</span></a>

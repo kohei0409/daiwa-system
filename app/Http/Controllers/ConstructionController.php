@@ -17,10 +17,9 @@ class ConstructionController extends Controller
     {
         $constructions = Construction::all();
         $properties = Property::all();
-        $manufacturers = Manufacturers::all();
         $details = Construction::all();
         $tools = Tool::all();
-
+        $manufacturers = Manufacturers::all();
 
         return view('construction.list', ['constructions' => $constructions, 'properties' => $properties, 'manufacturers' => $manufacturers, 'tools' => $tools, 'details' => $details]);
 

@@ -13,7 +13,7 @@ class StoreDp_assessmentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

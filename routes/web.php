@@ -25,22 +25,31 @@ Auth::routes([
 Route::group(['middleware' => 'auth'], function () {
 
 
+    Route::post('/dp_assessment_upload', [App\Http\Controllers\DpAssessmentController::class, 'upload'])->name('dp_assessment_upload');
+    Route::delete('/file_delete/{folderName}/{fileName}', [App\Http\Controllers\FileController::class, 'delete'])->name('file_delete');
+    Route::post('/file/rename/{folderName}/{fileName}', [App\Http\Controllers\DpAssessmentController::class, 'fileRename'])->name('file_rename');
+
+
     Route::get('/dp_assessment', [App\Http\Controllers\DpAssessmentController::class, 'index'])->name('dp_assessment');
     Route::get('/dp_assessment_list', [App\Http\Controllers\DpAssessmentController::class, 'list'])->name('dp_assessment_list');
     Route::get('/dp_assessment_input', [App\Http\Controllers\DpAssessmentController::class, 'input'])->name('dp_assessment_input');
     Route::get('/dp_assessment_store', [App\Http\Controllers\DpAssessmentController::class, 'store'])->name('dp_assessment_store');
+    Route::post('/dp_assessment_store', [App\Http\Controllers\DpAssessmentController::class, 'store'])->name('dp_assessment_store_post');
     Route::get('/dp_assessment_edit', [App\Http\Controllers\DpAssessmentController::class, 'edit'])->name('dp_assessment_edit');
     Route::get('/dp_assessment_update', [App\Http\Controllers\DpAssessmentController::class, 'update'])->name('dp_assessment_update');
     Route::get('/dp_assessment_destroy', [App\Http\Controllers\DpAssessmentController::class, 'destroy'])->name('dp_assessment_destroy');
+    Route::get('/dp_assessment_detail/{id}', [App\Http\Controllers\DpAssessmentController::class, 'detail'])->name('dp_assessment_detail');
 
 
     Route::get('/dp_construction', [App\Http\Controllers\DpConstructionController::class, 'index'])->name('dp_construction');
     Route::get('/dp_construction_list', [App\Http\Controllers\DpConstructionController::class, 'list'])->name('dp_construction_list');
     Route::get('/dp_construction_input', [App\Http\Controllers\DpConstructionController::class, 'input'])->name('dp_construction_input');
     Route::get('/dp_construction_store', [App\Http\Controllers\DpConstructionController::class, 'store'])->name('dp_construction_store');
-    Route::get('/dp_construction_edit', [App\Http\Controllers\DpConstructionController::class, 'edit'])->name('dp_construction_edit');
+    Route::get('/dp_construction_edit/{id}', [App\Http\Controllers\DpConstructionController::class, 'edit'])->name('dp_construction_edit');
     Route::get('/dp_construction_update', [App\Http\Controllers\DpConstructionController::class, 'update'])->name('dp_construction_update');
     Route::get('/dp_construction_destroy', [App\Http\Controllers\DpConstructionController::class, 'destroy'])->name('dp_construction_destroy');
+    Route::get('/dp_construction_estimate', [App\Http\Controllers\DpConstructionController::class, 'estimate'])->name('dp_construction_estimate');
+
 
     Route::get('/dp_sales', [App\Http\Controllers\DpSalesController::class, 'index'])->name('dp_sales');
     Route::get('/dp_sales_list', [App\Http\Controllers\DpSalesController::class, 'list'])->name('dp_sales_list');
@@ -59,7 +68,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dp_accounting_update', [App\Http\Controllers\DpAccountingController::class, 'update'])->name('dp_accounting_update');
     Route::get('/dp_accounting_destroy', [App\Http\Controllers\DpAccountingController::class, 'destroy'])->name('dp_accounting_destroy');
 
-
+    Route::get('/quotation', [App\Http\Controllers\QuotationController::class, 'index'])->name('quotation');
+    Route::get('/quotation_list', [App\Http\Controllers\QuotationController::class, 'list'])->name('quotation_list');
+    Route::get('/quotation_input', [App\Http\Controllers\QuotationController::class, 'input'])->name('quotation_input');
+    Route::get('/quotation_store', [App\Http\Controllers\QuotationController::class, 'store'])->name('quotation_store');
+    Route::get('/quotation_edit', [App\Http\Controllers\QuotationController::class, 'edit'])->name('quotation_edit');
+    Route::get('/quotation_update', [App\Http\Controllers\QuotationController::class, 'update'])->name('quotation_update');
+    Route::get('/quotation_destroy', [App\Http\Controllers\QuotationController::class, 'destroy'])->name('quotation_destroy');
 
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
