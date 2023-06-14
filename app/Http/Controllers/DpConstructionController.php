@@ -59,9 +59,11 @@ class DpConstructionController extends Controller
     public function estimate()
     {
 
-        $query = Property::all();
-        $property_list = Property::where('Property_status', '工事中')
-            ->orderBy('created_at', 'desc')
+     $property_list = Property::where(function ($query) {
+            $query->where('Property_status', '見積もり依頼')
+                ->orWhere('Property_status', '見積もり完了');
+        })
+            ->orderBy('Property_status', 'desc')
             ->get();
 
 
@@ -69,6 +71,20 @@ class DpConstructionController extends Controller
 
     }
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function estimate_detail($id)
+    {
+
+        $property = Property::find($id);
+
+        return view('dp_construction.estimate_detail', ['property' => $property]);
+
+    }
 
     /**
      * Display a listing of the resource.

@@ -76,8 +76,9 @@
                             <div class="accordion mt-5 " id="accordionExample">
                                 <div><h4>見積書一覧</h4></div>
                                 <?php $cnt = 0; ?>
-                                @foreach($property_list as $property_lists)
+                                @foreach($property_list_2 as $property_lists_2)
                                     @php $pop = 1; @endphp
+
                                     @include('dp_assessment.estimate')
                                         <?php $cnt++; ?>
                                 @endforeach

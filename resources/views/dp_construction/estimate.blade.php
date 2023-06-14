@@ -57,6 +57,27 @@
         }
     </style>
 
+    <style>
+        .tab_button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+            border: 0;
+            border-radius: 0;
+            overflow-anchor: none;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, border-radius .15s ease;
+            text-decoration: none;
+        }
+
+
+    </style>
+
 
     <div id="kt_app_content" class="app-content  flex-column-fluid ">
         <div id="kt_app_content_container" class="app-container  container-fluid ">
@@ -66,18 +87,48 @@
 
                     <div class="card card-flush h-xl-100">
                         <div class="card-body bg-light">
+                            <div><h4>見積書依頼一覧</h4></div>
+                            <div class="mt-3">
+                                <table class="table table-hover mt-2" style="">
 
 
-                            <div class="accordion mt-5 " id="accordionExample">
-                                <div><h4>見積書依頼一覧</h4></div>
-                                <?php $cnt = 0; ?>
-                                @foreach($property_list as $property_lists)
-                                    @php $pop = 1; @endphp
-                                    @include('dp_construction.result')
-                                        <?php $cnt++; ?>
-                                @endforeach
+                                    <?php $cnt = 0; ?>
+                                    @foreach($property_list as $property_lists)
+                                        @php $pop = 1; @endphp
+                                        @include('dp_construction.estimate_list')
+                                            <?php $cnt++; ?>
+                                    @endforeach
+                                </table>
+
+                                <style>
+
+
+                                    .clickable-row {
+                                        cursor: pointer;
+                                    }
+
+                                    .clickable-row td {
+                                        height: 60px;
+                                        vertical-align: middle;
+                                        padding: 10px;
+                                    }
+
+                                </style>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        const rows = document.querySelectorAll(".clickable-row");
+                                        rows.forEach(function (row) {
+                                            row.addEventListener("click", function () {
+                                                const href = this.dataset.href;
+                                                if (href) {
+                                                    window.location.href = href;
+                                                }
+                                            });
+                                        });
+                                    });
+                                </script>
                             </div>
-
 
                             <!--end::Table-->
                         </div>
@@ -87,31 +138,6 @@
                     <!--end::Table Widget 3-->    </div>
             </div>
 
-            <div class="row gy-5 g-xl-10">
-                <div class="col-xl-12 col-xxl-12 mb-5 mb-xl-10">
-
-                    <div class="card card-flush h-xl-100">
-                        <div class="card-body bg-light">
-
-
-                            <div class="accordion mt-5 " id="accordionExample">
-                                <div><h4>査定一覧</h4></div>
-                                <?php $cnt = 0; ?>
-                                @foreach($property_list as $property_lists)
-                                    @php $pop = 1; @endphp
-                                    @include('dp_construction.result')
-                                        <?php $cnt++; ?>
-                                @endforeach
-                            </div>
-
-
-                            <!--end::Table-->
-                        </div>
-                        <!--end::Card body-->
-
-                    </div>
-                    <!--end::Table Widget 3-->    </div>
-            </div>
         </div>
     </div>
 

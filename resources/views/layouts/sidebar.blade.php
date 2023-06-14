@@ -10,6 +10,16 @@
     @php($cals = "0")
 @endif
 
+<style>
+    :root {
+        --kt-app-sidebar-width: 200px;
+        --kt-app-sidebar-width-actual: 300px;
+        --kt-app-sidebar-gap-start: 0px;
+        --kt-app-sidebar-gap-end: 0px;
+        --kt-app-sidebar-gap-top: 0px;
+        --kt-app-sidebar-gap-bottom: 0px;
+    }
+</style>
 
 
 <div id="kt_app_sidebar" class="app-sidebar  flex-column "
@@ -143,7 +153,7 @@
                            href="{{asset('dp_construction_estimate')}}?tabs=2&&cals=23">
                             <span
                                 class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
-                                class="menu-title">INPUT</span></a>
+                                class="menu-title">見積書関連</span></a>
                     </div>
 
                     <div class="menu-item">

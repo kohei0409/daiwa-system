@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dp_assessment_destroy', [App\Http\Controllers\DpAssessmentController::class, 'destroy'])->name('dp_assessment_destroy');
     Route::get('/dp_assessment_detail/{id}', [App\Http\Controllers\DpAssessmentController::class, 'detail'])->name('dp_assessment_detail');
 
+    Route::post('/dp_assessment_estimate', [App\Http\Controllers\DpAssessmentController::class, 'estimate'])->name('dp_assessment_estimate');
+
 
     Route::get('/dp_construction', [App\Http\Controllers\DpConstructionController::class, 'index'])->name('dp_construction');
     Route::get('/dp_construction_list', [App\Http\Controllers\DpConstructionController::class, 'list'])->name('dp_construction_list');
@@ -49,6 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dp_construction_update', [App\Http\Controllers\DpConstructionController::class, 'update'])->name('dp_construction_update');
     Route::get('/dp_construction_destroy', [App\Http\Controllers\DpConstructionController::class, 'destroy'])->name('dp_construction_destroy');
     Route::get('/dp_construction_estimate', [App\Http\Controllers\DpConstructionController::class, 'estimate'])->name('dp_construction_estimate');
+    Route::get('/dp_construction_estimate_detail/{id}', [App\Http\Controllers\DpConstructionController::class, 'estimate_detail'])->name('dp_construction_estimate_detail');
 
 
     Route::get('/dp_sales', [App\Http\Controllers\DpSalesController::class, 'index'])->name('dp_sales');
